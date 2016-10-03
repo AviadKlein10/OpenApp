@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/textDate"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgBubblePointer"
+        android:background="@drawable/bubble_pointer_other_side_user"
+
+
+        android:layout_marginBottom="-1.4dp"
+        android:layout_alignBottom="@+id/textMsgContent"
+        android:layout_alignParentStart="true"
+        android:visibility="visible"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="whatsapp?"
+        android:id="@+id/textMsgContent"
+
+        android:background="@drawable/bubble_other_side_user_single_or_first"
+        android:gravity="center"
+        android:textColor="#ffffff"
+
+
+        android:layout_toEndOf="@+id/imgBubblePointer"
+        android:layout_below="@+id/textDate"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="15:36"
+        android:id="@+id/textSendingTime"
+        android:textColor="#9f9da1"
+        android:layout_below="@+id/textMsgContent"
+        android:layout_alignStart="@+id/textMsgContent"
+        android:visibility="gone"/>
+
+</RelativeLayout>
