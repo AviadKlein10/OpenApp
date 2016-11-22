@@ -164,7 +164,7 @@ public class FacebookConnectivity {
                             JSONObject jsObj = new JSONObject(response.getRawResponse());
 
                             JSONArray jarray = jsObj.getJSONArray("data");
-                            jarraySize = jarray.length();
+                            jarraySize = jarray.length();//CHECK
                             for (int i = 0; i < jarray.length(); i++) {
 
 
