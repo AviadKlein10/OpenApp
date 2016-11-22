@@ -13,7 +13,6 @@
     <RelativeLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-<<<<<<< HEAD
 
         android:layout_height="0dp"
         android:layout_weight="0.90">
@@ -47,42 +46,6 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="188dp"
             android:id="@+id/btnCheck" />
-=======
-        android:layout_height="0dp"
-        android:layout_weight="0.90">
-
-        <com.facebook.login.widget.LoginButton
-            android:id="@+id/login_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="146dp"
-            android:visibility="gone"/>
-
-
-
-
-            <aviv.myicebreaker.module.CircularImageView
-                android:layout_height="100dp"
-                android:layout_width="100dp"
-                android:id="@+id/imgProfilePic"
-                android:src="@drawable/mip"
-                android:contentDescription="profile_pic"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true">
-            </aviv.myicebreaker.module.CircularImageView>
-
-
-        <Button
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:text="s"
-                android:id="@+id/buttonUserDetails"
-            android:layout_alignParentRight="true" />
-
->>>>>>> refs/remotes/origin/Lets-Push
 
     </RelativeLayout>
 

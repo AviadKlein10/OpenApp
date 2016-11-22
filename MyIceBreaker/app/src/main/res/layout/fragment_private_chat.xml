@@ -20,21 +20,13 @@
             android:orientation="horizontal">
 
             <ImageButton
-<<<<<<< HEAD
                 android:id="@+id/btnBackFromChat"
-=======
-                android:id="@+id/btnDrawer"
->>>>>>> refs/remotes/origin/Lets-Push
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:background="@android:color/transparent"
-<<<<<<< HEAD
                 android:src="@drawable/back"
                 />
-=======
-                android:src="@drawable/back" />
->>>>>>> refs/remotes/origin/Lets-Push
         </LinearLayout>
 
 
@@ -62,30 +54,18 @@
             android:orientation="horizontal" >
             <ImageButton
                 android:id="@+id/btnFire"
-<<<<<<< HEAD
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@drawable/fire_unpressed"
                  />
-=======
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:src="@drawable/fire_unpressed" />
->>>>>>> refs/remotes/origin/Lets-Push
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-<<<<<<< HEAD
         android:layout_weight="0.15"
-=======
-        android:layout_weight="0.19"
->>>>>>> refs/remotes/origin/Lets-Push
         android:background="#8b35294e"
         android:orientation="horizontal"
         android:baselineAligned="false">
@@ -96,7 +76,6 @@
             android:layout_weight="0.40"
             android:orientation="horizontal">
 
-<<<<<<< HEAD
 
 
             <Button
@@ -106,8 +85,6 @@
                 android:id="@+id/btnLikeQuestion"
                 android:background="@color/background_tab_pressed"
                 />
-=======
->>>>>>> refs/remotes/origin/Lets-Push
         </LinearLayout>
 
         <RelativeLayout
@@ -136,7 +113,6 @@
 
         </RelativeLayout>
 
-<<<<<<< HEAD
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -156,50 +132,28 @@
                 android:layout_alignParentEnd="true" />
 
         </RelativeLayout>
-=======
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.40"
-            android:orientation="horizontal">
-
-        </LinearLayout>
->>>>>>> refs/remotes/origin/Lets-Push
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-<<<<<<< HEAD
         android:layout_weight="0.63"
         android:orientation="vertical"
         android:weightSum="1">
-=======
-        android:layout_weight="0.60"
-        android:orientation="vertical" >
->>>>>>> refs/remotes/origin/Lets-Push
 
         <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/listChat"
-<<<<<<< HEAD
             android:divider="@null"
             android:stackFromBottom="true"/>
-=======
-            android:divider="@null"/>
->>>>>>> refs/remotes/origin/Lets-Push
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-<<<<<<< HEAD
         android:layout_weight="0.13"
-=======
-        android:layout_weight="0.12"
->>>>>>> refs/remotes/origin/Lets-Push
         android:background="#8b35294e"
         android:orientation="horizontal">
 
@@ -224,10 +178,7 @@
 
         <LinearLayout
             android:orientation="horizontal"
-<<<<<<< HEAD
             android:id="@+id/layoutBtnSendMsg"
-=======
->>>>>>> refs/remotes/origin/Lets-Push
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.18"

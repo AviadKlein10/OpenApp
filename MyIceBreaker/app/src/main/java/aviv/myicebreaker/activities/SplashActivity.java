@@ -9,11 +9,8 @@ import android.content.res.AssetManager;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
-<<<<<<< HEAD
 import android.os.Handler;
 import android.support.v4.BuildConfig;
-=======
->>>>>>> refs/remotes/origin/Lets-Push
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -22,29 +19,19 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-<<<<<<< HEAD
-=======
-import android.widget.ImageView;
->>>>>>> refs/remotes/origin/Lets-Push
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookSdk;
-<<<<<<< HEAD
 import com.facebook.LoggingBehavior;
 import com.facebook.login.LoginManager;
 
 import java.util.ArrayList;
-=======
-import com.facebook.login.LoginManager;
-
->>>>>>> refs/remotes/origin/Lets-Push
 import java.util.Locale;
 
 import aviv.myicebreaker.R;
 import aviv.myicebreaker.Singleton;
-<<<<<<< HEAD
 import aviv.myicebreaker.module.CustomObjects.FacebookAlbumObject;
 import aviv.myicebreaker.module.CustomObjects.NewUser;
 import aviv.myicebreaker.module.JsonParser;
@@ -52,13 +39,6 @@ import aviv.myicebreaker.network.Connectivity;
 import aviv.myicebreaker.network.ConnectivityError;
 import aviv.myicebreaker.network.FacebookConnectivity;
 import aviv.myicebreaker.network.ResponseObject;
-=======
-import aviv.myicebreaker.module.CircularImageView;
-import aviv.myicebreaker.module.JsonParser;
-import aviv.myicebreaker.module.CustomObjects.NewUser;
-import aviv.myicebreaker.network.Connectivity;
-import aviv.myicebreaker.network.FacebookConnectivity;
->>>>>>> refs/remotes/origin/Lets-Push
 import aviv.myicebreaker.network.SplashDoneDownload;
 
 public class SplashActivity extends AppCompatActivity implements SplashDoneDownload {
@@ -73,17 +53,11 @@ public class SplashActivity extends AppCompatActivity implements SplashDoneDownl
     private CallbackManager callbackManager;
     private ProgressDialog progressDialog;
     private Button buttonUserDetails;
-<<<<<<< HEAD
     private LinearLayout layoutSignIn;
     private FacebookConnectivity facebookConnectivity;
     private Button btnDeleteUser;
     private Button btnCheck;
     private ArrayList<FacebookAlbumObject> newFBarray;
-=======
-    private ImageView imgProfilePic;
-    private LinearLayout layoutSignIn;
-    private FacebookConnectivity facebookConnectivity;
->>>>>>> refs/remotes/origin/Lets-Push
 
 
     @Override
@@ -91,13 +65,10 @@ public class SplashActivity extends AppCompatActivity implements SplashDoneDownl
         super.onCreate(savedInstanceState);
         initNoTitleScreen();
         FacebookSdk.sdkInitialize(this.getApplicationContext());
-<<<<<<< HEAD
         if (BuildConfig.DEBUG) {
             FacebookSdk.setIsDebugEnabled(true);
             FacebookSdk.addLoggingBehavior(LoggingBehavior.INCLUDE_ACCESS_TOKENS);
         }
-=======
->>>>>>> refs/remotes/origin/Lets-Push
         setContentView(R.layout.splash_screen);
 
         facebookConnectivity = new FacebookConnectivity(this);
@@ -108,7 +79,6 @@ public class SplashActivity extends AppCompatActivity implements SplashDoneDownl
 
         init();
         loadUserSharedPreferences();
-<<<<<<< HEAD
         //loadFirebaseToken();
         buttonUserDetails = (Button) findViewById(R.id.buttonUserDetails);
         btnCheck = (Button) findViewById(R.id.btnCheck);
@@ -129,26 +99,13 @@ dataReceived();            //  facebookConnectivity.getAllFacebookAlbumsInfo();
             @Override
             public void onClick(View v) {
                 facebookConnectivity.facebookTry();
-=======
-        loadFirebaseToken();
-        buttonUserDetails = (Button) findViewById(R.id.buttonUserDetails);
-        buttonUserDetails.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
->>>>>>> refs/remotes/origin/Lets-Push
                if(globalLocalUser !=null) {
                    Log.d(getClass().getSimpleName(), "User Ok " + globalLocalUser.getProfileImageUrl());
                    Log.d("final check", Singleton.getInstance().getNewUser().getImageUrl()[0]);
                   connectivity.testUserDetails();
-<<<<<<< HEAD
                    connectivity.receiveChatMsgs();
                   // connectivity.receiveUserChats(Singleton.getInstance().getNewUser().getId());
                    connectivity.receiveUserChats("57b726b26470e2cb10896ac1");
-=======
-                  connectivity.testSearchForMatch();
-                   connectivity.recieveChat();
->>>>>>> refs/remotes/origin/Lets-Push
                    //    logoutAndDeleteUser();
 
                    runMainActivity();
@@ -156,7 +113,6 @@ dataReceived();            //  facebookConnectivity.getAllFacebookAlbumsInfo();
 
             }
         });
-<<<<<<< HEAD
         btnDeleteUser = (Button)findViewById(R.id.btnDeleteUser);
       btnDeleteUser.setOnClickListener(new View.OnClickListener() {
           @Override
@@ -165,9 +121,6 @@ dataReceived();            //  facebookConnectivity.getAllFacebookAlbumsInfo();
               layoutSignIn.setVisibility(View.VISIBLE);
           }
       });
-=======
-
->>>>>>> refs/remotes/origin/Lets-Push
 
     }
 
@@ -200,18 +153,11 @@ dataReceived();            //  facebookConnectivity.getAllFacebookAlbumsInfo();
         TextView txtSignWithFacebook = (TextView) findViewById(R.id.txtSignWithFacebook);
         if (txtSignWithFacebook != null) {
             txtSignWithFacebook.setTypeface(typeface);
-<<<<<<< HEAD
             Log.e(TAG, "no problam with typeface");
-=======
->>>>>>> refs/remotes/origin/Lets-Push
         } else {
             Log.e(TAG, "problam with typeface");
         }
 
-<<<<<<< HEAD
-=======
-        imgProfilePic = (CircularImageView) findViewById(R.id.imgProfilePic);
->>>>>>> refs/remotes/origin/Lets-Push
 
         layoutSignIn = (LinearLayout) findViewById(R.id.layoutSignIn);
         assert layoutSignIn != null;
@@ -270,12 +216,8 @@ dataReceived();            //  facebookConnectivity.getAllFacebookAlbumsInfo();
             Log.d("glocl ," , globalLocalUser.getFirstName());
 
         } else {
-<<<<<<< HEAD
 
 
-=======
-            imgProfilePic.setVisibility(View.VISIBLE);
->>>>>>> refs/remotes/origin/Lets-Push
 
 
             Log.d("no user", " login00");
@@ -354,7 +296,6 @@ dataReceived();            //  facebookConnectivity.getAllFacebookAlbumsInfo();
         Log.d("isAppReady","yes");
         return true;
     }
-<<<<<<< HEAD
     private String loadFirebaseToken(){
        SharedPreferences sharedPreferences = getSharedPreferences("refreshed_fb_token",MODE_PRIVATE);
        String restoredUserFBToken = sharedPreferences.getString(USER_FB_TOKEN, "");
@@ -380,11 +321,5 @@ dataReceived();            //  facebookConnectivity.getAllFacebookAlbumsInfo();
         }else{
             Log.d("final complete " , newFBarray.get(4).getAlbumName());
         }
-=======
-    private void loadFirebaseToken(){
-       SharedPreferences sharedPreferences = getSharedPreferences("refreshed_fb_token",MODE_PRIVATE);
-       String restoredUserFBToken = sharedPreferences.getString(USER_FB_TOKEN, "");
-       Log.d("USER_FB_TOKEN",restoredUserFBToken);
->>>>>>> refs/remotes/origin/Lets-Push
     }
 }

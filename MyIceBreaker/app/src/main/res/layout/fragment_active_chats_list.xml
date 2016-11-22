@@ -42,11 +42,7 @@
 
         app:fab_elevationCompat="4dp"
         android:scaleType="fitCenter"
-<<<<<<< HEAD
         android:adjustViewBounds="false"
-=======
-        android:adjustViewBounds="true"
->>>>>>> refs/remotes/origin/Lets-Push
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="88dp" />

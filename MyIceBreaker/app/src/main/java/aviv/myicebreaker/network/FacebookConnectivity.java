@@ -2,18 +2,12 @@ package aviv.myicebreaker.network;
 
 import android.app.Activity;
 import android.content.Context;
-<<<<<<< HEAD
 import android.content.SharedPreferences;
-=======
->>>>>>> refs/remotes/origin/Lets-Push
 import android.os.Bundle;
 import android.util.Log;
 
 import com.facebook.AccessToken;
-<<<<<<< HEAD
 import com.facebook.AccessTokenTracker;
-=======
->>>>>>> refs/remotes/origin/Lets-Push
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -26,7 +20,6 @@ import com.facebook.login.widget.LoginButton;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-<<<<<<< HEAD
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,14 +28,6 @@ import aviv.myicebreaker.Singleton;
 import aviv.myicebreaker.facebook_check.GridItem;
 import aviv.myicebreaker.module.CustomObjects.FacebookAlbumObject;
 import aviv.myicebreaker.module.CustomObjects.NewUser;
-=======
-import java.util.Arrays;
-
-import aviv.myicebreaker.app.RealmManager;
-import aviv.myicebreaker.Singleton;
-import aviv.myicebreaker.module.CustomObjects.NewUser;
-import io.realm.Realm;
->>>>>>> refs/remotes/origin/Lets-Push
 
 /**
  * Created by Aviv on 20/07/2016.
@@ -50,27 +35,17 @@ import io.realm.Realm;
 public class FacebookConnectivity {
 
     static final String TAG = "FacebookConnectivity";
-<<<<<<< HEAD
     private static final String USER_FB_TOKEN = "userFirebaseToken";
-=======
->>>>>>> refs/remotes/origin/Lets-Push
 
 
     private Context context;
     private BaseListener baseListener;
-<<<<<<< HEAD
     private LoginButton loginButton;
     private String nName, nId, nEmail, nGender, nPhoto, nBirthday;
     private String[] photosUrlArr = new String[3];
     private String FCMToken;
     private ArrayList<FacebookAlbumObject> finalFBalbumsObj,facebookAlbumObjects;
     private int jarraySize;
-=======
-    private Realm realm;
-    private LoginButton loginButton;
-    private String nName, nId, nEmail, nGender, nPhoto, nBirthday;
-    private String[] photosUrlArr = new String[3];
->>>>>>> refs/remotes/origin/Lets-Push
 
 
     public FacebookConnectivity(Activity activity) {
@@ -80,7 +55,6 @@ public class FacebookConnectivity {
 
     public void initFacebook(CallbackManager callbackManager) {
 
-<<<<<<< HEAD
         loginButton = new LoginButton(context);
 
         loginButton.setReadPermissions(Arrays.asList("public_profile", "user_photos", "email", "user_birthday"));
@@ -92,19 +66,6 @@ public class FacebookConnectivity {
 
                 receiveFirstThreeFacebookPhotos();
                 Log.d("accesdToken", loginResult.getAccessToken().getToken() + "");
-=======
-        RealmManager.getInstance(context);
-        realm = RealmManager.getRealm();
-        loginButton = new LoginButton(context);
-
-        loginButton.setReadPermissions(Arrays.asList("public_profile", "user_photos", "email", "user_birthday"));
-
-        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(final LoginResult loginResult) {
-                albumTry();
-                Log.d("accesdToken", loginResult.getAccessToken() + "");
->>>>>>> refs/remotes/origin/Lets-Push
                 GraphRequest request = GraphRequest.newMeRequest(AccessToken.getCurrentAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
                     @Override
                     public void onCompleted(JSONObject object, GraphResponse response) {
@@ -114,14 +75,7 @@ public class FacebookConnectivity {
 
 
                         try {
-<<<<<<< HEAD
 
-=======
-                            realm.beginTransaction();
-
-
-                            realm.commitTransaction();
->>>>>>> refs/remotes/origin/Lets-Push
 //////////
                             Bundle params = new Bundle();
                             params.putString("fields", "id,name,birthday,email,gender,cover,picture.type(large)");
@@ -152,11 +106,7 @@ public class FacebookConnectivity {
                                                     onDoneDownloadUserDetails();
 
                                                 } catch (Exception e) {
-<<<<<<< HEAD
                                                     Log.e("bigProblam", e.toString());
-=======
-                                                    e.printStackTrace();
->>>>>>> refs/remotes/origin/Lets-Push
                                                 }
                                             }
                                         }
@@ -187,17 +137,13 @@ public class FacebookConnectivity {
 
             }
         });
-<<<<<<< HEAD
         FCMToken = loadFirebaseToken();
-=======
->>>>>>> refs/remotes/origin/Lets-Push
     }
 
     public void performLogin() {
         loginButton.performClick();
     }
 
-<<<<<<< HEAD
     public ArrayList<FacebookAlbumObject> getAllFacebookAlbumsInfo() {
 
         final Bundle params = new Bundle();
@@ -218,7 +164,7 @@ public class FacebookConnectivity {
                             JSONObject jsObj = new JSONObject(response.getRawResponse());
 
                             JSONArray jarray = jsObj.getJSONArray("data");
-                            jarraySize = jarray.length();//CHECK
+                            jarraySize = jarray.length();
                             for (int i = 0; i < jarray.length(); i++) {
 
 
@@ -279,13 +225,6 @@ public class FacebookConnectivity {
         final Bundle params = new Bundle();
         params.putBoolean("redirect", false);
 
-=======
-    public void albumTry() {
-        final Bundle params = new Bundle();
-        params.putBoolean("redirect", false);
-        RealmManager.getInstance(context);
-        realm = RealmManager.getRealm();
->>>>>>> refs/remotes/origin/Lets-Push
 
         new GraphRequest(
                 AccessToken.getCurrentAccessToken(),
@@ -383,13 +322,9 @@ public class FacebookConnectivity {
     private void onDoneDownloadUserDetails() {
         if (nName != null) {
             Log.d("nName", nName); //TODO check why not recieve nName
-<<<<<<< HEAD
 
             // NewUser localUser = new NewUser(nName, nId, "05/05/1995", nGender, photosUrlArr,"walla@balla.co.il",FCMToken);
             NewUser localUser = new NewUser(nName, nId, nBirthday, nGender, photosUrlArr, nEmail, FCMToken);
-=======
-            NewUser localUser = new NewUser(nName, nId, nBirthday, nGender, photosUrlArr, nEmail);
->>>>>>> refs/remotes/origin/Lets-Push
             Singleton.getInstance().setNewUser(localUser);
             Log.d(getClass().getSimpleName(), "User Ok " + localUser.getProfileImageUrl());
         } else {
@@ -398,7 +333,6 @@ public class FacebookConnectivity {
         }
     }
 
-<<<<<<< HEAD
     private String loadFirebaseToken() {
         SharedPreferences sharedPreferences = context.getSharedPreferences("refreshed_fb_token", 0);
         String restoredUserFBToken = sharedPreferences.getString(USER_FB_TOKEN, "");
@@ -511,8 +445,6 @@ public class FacebookConnectivity {
 
 
 
-=======
->>>>>>> refs/remotes/origin/Lets-Push
 }
 
 

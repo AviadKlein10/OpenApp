@@ -33,11 +33,7 @@
             android:layout_weight="0.16"
             android:gravity="center|left">
 
-<<<<<<< HEAD
             <ImageView
-=======
-            <aviv.myicebreaker.module.CircularImageView
->>>>>>> refs/remotes/origin/Lets-Push
                 android:layout_height="55sp"
                 android:layout_width="55sp"
                 android:id="@+id/imgProfileCellPic"

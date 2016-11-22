@@ -1,10 +1,6 @@
 package aviv.myicebreaker.module.Adapters;
 
 import android.content.Context;
-<<<<<<< HEAD
-=======
-import android.util.Log;
->>>>>>> refs/remotes/origin/Lets-Push
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,12 +16,8 @@ import aviv.myicebreaker.module.BubbleOrderType;
 import aviv.myicebreaker.module.BubbleType;
 import aviv.myicebreaker.module.CustomObjects.BubbleChatObject;
 
-<<<<<<< HEAD
 import static aviv.myicebreaker.module.BubbleType.LOCAL_USER;
 import static aviv.myicebreaker.module.BubbleType.QUESTION;
-=======
-import static aviv.myicebreaker.module.BubbleType.*;
->>>>>>> refs/remotes/origin/Lets-Push
 
 /**
  * Created by Aviad on 30/09/2016.
@@ -98,17 +90,11 @@ public class BubbleChatAdapter extends BaseAdapter {
             holder.textSendingTime.setVisibility(View.GONE);
             holder.imgBubblePointer.setVisibility(View.INVISIBLE);
         } else {
-<<<<<<< HEAD
 
             imageParams.addRule(RelativeLayout.ALIGN_BOTTOM, holder.textMsgContent.getId());
             imageParams.setMargins(0,0,0, -5);
             holder.textSendingTime.setVisibility(View.VISIBLE);
 
-=======
-            imageParams.addRule(RelativeLayout.ALIGN_BOTTOM, holder.textMsgContent.getId());
-            imageParams.setMargins(0,0,0, -5);
-            holder.textSendingTime.setVisibility(View.VISIBLE);
->>>>>>> refs/remotes/origin/Lets-Push
             RelativeLayout.LayoutParams textTimeParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,
                     RelativeLayout.LayoutParams.WRAP_CONTENT);
             textTimeParams.addRule(RelativeLayout.BELOW, holder.textMsgContent.getId());
@@ -170,11 +156,7 @@ public class BubbleChatAdapter extends BaseAdapter {
     }
 
     private BubbleOrderType whatLocationOfSameSideBubble(int position, BubbleType currentBubbleType) {
-<<<<<<< HEAD
 
-=======
-        Log.d("whatLocation ", "connect");
->>>>>>> refs/remotes/origin/Lets-Push
 
         if (currentBubbleType == QUESTION) {
             return null;

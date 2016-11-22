@@ -16,17 +16,12 @@ import com.koushikdutta.ion.Ion;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-<<<<<<< HEAD
 import java.io.File;
 
 import aviv.myicebreaker.R;
 import aviv.myicebreaker.Singleton;
 import aviv.myicebreaker.activities.ActivityPrivateChat;
 import aviv.myicebreaker.app.RealmManager;
-=======
-import aviv.myicebreaker.app.RealmManager;
-import aviv.myicebreaker.Singleton;
->>>>>>> refs/remotes/origin/Lets-Push
 import aviv.myicebreaker.module.CustomObjects.NewUser;
 import io.realm.Realm;
 
@@ -38,10 +33,7 @@ public class Connectivity {
     static final String TAG = "connectivity";
 
     private Realm realm;
-<<<<<<< HEAD
     private String serverIp;
-=======
->>>>>>> refs/remotes/origin/Lets-Push
 
     private Context context;
     private BaseListener baseListener;
@@ -51,10 +43,7 @@ public class Connectivity {
     public Connectivity(Activity activity) {
         this.context = activity;
         this.baseListener = (BaseListener) activity;
-<<<<<<< HEAD
         this.serverIp = context.getResources().getString(R.string.server_ip);
-=======
->>>>>>> refs/remotes/origin/Lets-Push
     }
 
 
@@ -81,11 +70,7 @@ public class Connectivity {
                                     Log.e(TAG, " Page Not Found! 404 error");
                                 }
                             }
-<<<<<<< HEAD
                              ((SplashDoneDownload) baseListener).onLoginDone(null, e);
-=======
-                            //  ((SplashDoneDownload) baseListener).onLoginDone(null, e);
->>>>>>> refs/remotes/origin/Lets-Push
                         }
                     }
 
@@ -94,11 +79,8 @@ public class Connectivity {
     }*/
 
     public void testUserDetails() {
-<<<<<<< HEAD
 
 
-=======
->>>>>>> refs/remotes/origin/Lets-Push
         NewUser localUser = Singleton.getInstance().getNewUser();
         Log.d("localUser ", "localUser(facebook ID)" + localUser.getId() +
                 "\nname " + localUser.getName() +
@@ -123,16 +105,10 @@ public class Connectivity {
         Log.d("imageUrlServ", imageArr.toString());
         json.addProperty("email", localUser.getEmail());
         json.addProperty("lastLocation", "33.2386268,35.6089003");
-<<<<<<< HEAD
         json.addProperty("deviceId", localUser.getFCMToken());
 
         Ion.with(context)
                 .load(serverIp + "/api/user/GetUsersDetails")
-=======
-
-        Ion.with(context)
-                .load("http://79.181.246.70:8082/api/user/GetUsersDetails")
->>>>>>> refs/remotes/origin/Lets-Push
                 .setJsonObjectBody(json)
                 .asJsonObject()
                 .setCallback(new FutureCallback<JsonObject>() {
@@ -160,11 +136,7 @@ public class Connectivity {
 
 
         Ion.with(context)
-<<<<<<< HEAD
                 .load(serverIp + "/api/user/SearchForMatch")
-=======
-                .load("http://79.181.246.70:8082/api/user/SearchForMatch")
->>>>>>> refs/remotes/origin/Lets-Push
                 .setJsonObjectBody(json)
                 .asJsonObject()
                 .setCallback(new FutureCallback<JsonObject>() {
@@ -195,7 +167,6 @@ public class Connectivity {
                         try {
                             JSONObject jsObj = new JSONObject(response.getRawResponse());
 
-<<<<<<< HEAD
                             final JSONArray jarray = jsObj.getJSONArray("data");
                             for (int i = 1; i < 2; i++) {
 
@@ -292,8 +263,6 @@ public class Connectivity {
                         try {
                             JSONObject jsObj = new JSONObject(response.getRawResponse());
 
-=======
->>>>>>> refs/remotes/origin/Lets-Push
                             JSONArray jarray = jsObj.getJSONArray("data");
                             for (int i = 0; i < jarray.length(); i++) {
 
@@ -372,7 +341,6 @@ public class Connectivity {
         return photosUrlArr;
     }
 
-<<<<<<< HEAD
 
     public void receiveChatMsgs() {
         Ion.with(context)
@@ -460,25 +428,14 @@ public class Connectivity {
                 .setMultipartParameter("userId", "57b726b26470e2cb10896ac1")
                 .setMultipartParameter("imgOrder", imageIndexInArray)
                 .setMultipartFile("imgFile", imageFile)
-=======
-    public void recieveChat() {
-        Ion.with(context)
-                .load("http://79.181.246.70:8082/api/user/GetChat/57c914fd3288e95b0ab2abb2")
->>>>>>> refs/remotes/origin/Lets-Push
                 .asJsonObject()
                 .setCallback(new FutureCallback<JsonObject>() {
                     @Override
                     public void onCompleted(Exception e, JsonObject result) {
-<<<<<<< HEAD
                         Log.d("ImageResult", result + "");
                         Log.d("ImageException", e + "");
                     }
                 });
 
-=======
-Log.d("result Chat ",result+" hhh");
-                    }
-                });
->>>>>>> refs/remotes/origin/Lets-Push
     }
 }
