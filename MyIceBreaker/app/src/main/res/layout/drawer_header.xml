@@ -21,18 +21,30 @@
         android:src="#0000dd44"
         android:baselineAlignBottom="true"
         android:layout_alignParentBottom="true"
+<<<<<<< HEAD
         android:layout_alignEnd="@+id/btnChagnePic"
+=======
+        android:layout_alignEnd="@+id/menu_down"
+>>>>>>> refs/remotes/origin/Lets-Push
         android:gravity="center">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Aviad"
             android:textSize="20sp"
+<<<<<<< HEAD
             android:textColor="#ffffff"
             android:layout_gravity="bottom" />
     </LinearLayout>
     <com.github.clans.fab.FloatingActionButton
         android:id="@+id/btnChagnePic"
+=======
+            android:textColor="@color/secondPrimaryColor"
+            android:layout_gravity="bottom" />
+    </LinearLayout>
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/menu_down"
+>>>>>>> refs/remotes/origin/Lets-Push
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:src="@drawable/full_camera"

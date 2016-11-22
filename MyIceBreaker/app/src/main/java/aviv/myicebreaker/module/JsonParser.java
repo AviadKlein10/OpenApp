@@ -25,7 +25,10 @@ public class JsonParser {
     private static final String BUBBLE_TYPE = "bubbleType";
     private static final String MESSAGE_CONTENT = "messageContent";
     private static final String MESSAGE_TIME = "dateTime";
+<<<<<<< HEAD
     private static final String FCMTOKEN = "deviceId";
+=======
+>>>>>>> refs/remotes/origin/Lets-Push
 
 
     public static NewUser parseUserToObject(String result){
@@ -37,7 +40,10 @@ public class JsonParser {
             String userID = jsonUserObject.getString(USER_ID);
             String age = jsonUserObject.getString(AGE);
             String email = jsonUserObject.getString(EMAIL);
+<<<<<<< HEAD
             String FCMToken = jsonUserObject.getString(FCMTOKEN);
+=======
+>>>>>>> refs/remotes/origin/Lets-Push
             JSONArray imageUrl = jsonUserObject.getJSONArray(IMAGE_URL);
 
             Log.d("imageArr2",imageUrl.toString());
@@ -45,7 +51,11 @@ public class JsonParser {
             String[] imageUrlArr = convertImageUrlToArr(imageUrl);
             String gender= jsonUserObject.getString(GENDER);
 
+<<<<<<< HEAD
             user = new NewUser(userName,userID,age,gender,imageUrlArr,email,FCMToken);
+=======
+            user = new NewUser(userName,userID,age,gender,imageUrlArr,email);
+>>>>>>> refs/remotes/origin/Lets-Push
 
         } catch (JSONException e) {
             Log.e(e.toString(), " 404");
@@ -85,7 +95,10 @@ public class JsonParser {
 
             jsonUserObject.put("imageUrl", imageArr); /// TODO Might problam
             jsonUserObject.put("email", localUser.getEmail());
+<<<<<<< HEAD
             jsonUserObject.put("deviceId",localUser.getFCMToken());
+=======
+>>>>>>> refs/remotes/origin/Lets-Push
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -139,7 +152,11 @@ public class JsonParser {
             Log.e(e.toString(), " 404");
         }
 
+<<<<<<< HEAD
 
+=======
+        Log.d("checkArr",arrConversation.get(2).getMessageContent());
+>>>>>>> refs/remotes/origin/Lets-Push
         return arrConversation;
     }
 

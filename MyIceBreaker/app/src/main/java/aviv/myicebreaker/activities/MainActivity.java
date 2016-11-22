@@ -1,16 +1,27 @@
 package aviv.myicebreaker.activities;
 
+<<<<<<< HEAD
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
+=======
+import android.content.res.AssetManager;
+import android.os.Build;
+>>>>>>> refs/remotes/origin/Lets-Push
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+<<<<<<< HEAD
+=======
+import android.content.Intent;
+import android.graphics.Typeface;
+import android.os.Bundle;
+>>>>>>> refs/remotes/origin/Lets-Push
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -22,14 +33,20 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+<<<<<<< HEAD
 import com.bumptech.glide.Glide;
 import com.github.clans.fab.FloatingActionButton;
 
 import java.io.File;
+=======
+import com.squareup.picasso.Picasso;
+
+>>>>>>> refs/remotes/origin/Lets-Push
 import java.util.Locale;
 
 import aviv.myicebreaker.R;
 import aviv.myicebreaker.Singleton;
+<<<<<<< HEAD
 import aviv.myicebreaker.module.CustomObjects.NewUser;
 import aviv.myicebreaker.module.Listeners.DrawerListener;
 import aviv.myicebreaker.module.Listeners.ListenerActiveChatsList;
@@ -47,10 +64,21 @@ import aviv.myicebreaker.view_fragments.FragmentPersonalPreferences;
 import aviv.myicebreaker.view_fragments.FragmentSomeText;
 import aviv.myicebreaker.view_fragments.GalleryListener;
 
+=======
+import aviv.myicebreaker.module.Listeners.DrawerListener;
+import aviv.myicebreaker.module.CustomObjects.NewUser;
+import aviv.myicebreaker.network.Connectivity;
+import aviv.myicebreaker.view_fragments.FragmentChats;
+import aviv.myicebreaker.view_fragments.FragmentPersonalPreferences;
+import aviv.myicebreaker.view_fragments.FragmentPictureReplace;
+import aviv.myicebreaker.view_fragments.FragmentSomeText;
+import aviv.myicebreaker.module.Listeners.ListenerActiveChatsList;
+>>>>>>> refs/remotes/origin/Lets-Push
 
 /**
  * Created by Aviv on 12/07/2016.
  */
+<<<<<<< HEAD
 public class MainActivity extends AppCompatActivity implements DrawerListener, ListenerActiveChatsList, SearchBtnListener, OpenGalleryListener,GalleryListener {
 
     public static final String TAG = Connectivity.class.getSimpleName();
@@ -60,6 +88,15 @@ public class MainActivity extends AppCompatActivity implements DrawerListener, L
     private DrawerLayout mDrawerLayout;
     private FloatingActionButton btnChangePic;
     private Connectivity connectivity;
+=======
+public class MainActivity extends AppCompatActivity implements DrawerListener, ListenerActiveChatsList {
+
+    public static final String TAG = Connectivity.class.getSimpleName();
+    private FragmentChats fragmentChats;
+
+    private NewUser localUser;
+    private DrawerLayout mDrawerLayout;
+>>>>>>> refs/remotes/origin/Lets-Push
 
 
     @Override
@@ -69,7 +106,11 @@ public class MainActivity extends AppCompatActivity implements DrawerListener, L
             @Override
             public void run() {
                 localUser = new NewUser(null);
+<<<<<<< HEAD
                 localUser = new NewUser(Singleton.getInstance().getNewUser());
+=======
+                localUser =new NewUser(Singleton.getInstance().getNewUser());
+>>>>>>> refs/remotes/origin/Lets-Push
                 Log.d("wtff", " " + localUser.getFirstName());
             }
         });
@@ -77,8 +118,11 @@ public class MainActivity extends AppCompatActivity implements DrawerListener, L
         initActionBar();
         initDrawerNavigation();
 
+<<<<<<< HEAD
         connectivity = new Connectivity(this);
        Log.d("Splash? ",SplashActivity.TAG);
+=======
+>>>>>>> refs/remotes/origin/Lets-Push
 
         fragmentChats = new FragmentChats();
 
@@ -106,12 +150,16 @@ public class MainActivity extends AppCompatActivity implements DrawerListener, L
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         View hView = navigationView.inflateHeaderView(R.layout.drawer_header);
+<<<<<<< HEAD
         View headerview = navigationView.getHeaderView(0);
+=======
+>>>>>>> refs/remotes/origin/Lets-Push
 
         navigationView.setNavigationItemSelectedListener(navigationItemSelectedListener);
         //  String urlImg = "https://assets.entrepreneur.com/content/16x9/822/20150406145944-dos-donts-taking-perfect-linkedin-profile-picture-selfie-mobile-camera-2.jpeg";
 
 
+<<<<<<< HEAD
         ImageView profileImgDrawer = (ImageView) headerview.findViewById(R.id.drawerImgUser);
         btnChangePic = (FloatingActionButton) headerview.findViewById(R.id.btnChagnePic);
         btnChangePic.setOnClickListener(new View.OnClickListener() {
@@ -129,6 +177,14 @@ public class MainActivity extends AppCompatActivity implements DrawerListener, L
         navigationView.setCheckedItem(R.id.home);
         navigationView.setTextDirection(View.TEXT_DIRECTION_RTL);
         navigationView.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+=======
+        ImageView profileImgDrawer = (ImageView) hView.findViewById(R.id.drawerImgUser);
+        Picasso.with(this).load(Singleton.getInstance().getNewUser().getProfileImageUrl()).resize(640,360).centerCrop().into(profileImgDrawer);
+
+        navigationView.setCheckedItem(R.id.home);
+        navigationView.setTextDirection(View.TEXT_DIRECTION_LTR);
+        navigationView.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
+>>>>>>> refs/remotes/origin/Lets-Push
         navigationView.setItemTextAppearance(R.style.item_navigation);
 
     }
@@ -142,12 +198,19 @@ public class MainActivity extends AppCompatActivity implements DrawerListener, L
             Fragment fragment = null;
             final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             switch (item.getItemId()) {
+<<<<<<< HEAD
+=======
+                case R.id.home:
+                    fragment = new FragmentPictureReplace();
+                    break;
+>>>>>>> refs/remotes/origin/Lets-Push
                 case R.id.userPreferences:
                     fragment = new FragmentPersonalPreferences();
                     break;
                 case R.id.termsOfUse:
                     fragment = new FragmentSomeText();
                     break;
+<<<<<<< HEAD
                 case R.id.contactUs:
                 //    fragment = new FragmentPictureReplace();
                     break;
@@ -157,6 +220,8 @@ public class MainActivity extends AppCompatActivity implements DrawerListener, L
                 case R.id.share:
               //      fragment = new FragmentPictureReplace();
                     break;
+=======
+>>>>>>> refs/remotes/origin/Lets-Push
             }
 
             ft.replace(R.id.fragmentContainer, fragment).commit();
@@ -249,6 +314,7 @@ public class MainActivity extends AppCompatActivity implements DrawerListener, L
         mainIntent.putExtra("Hello", "fck");
         startActivity(mainIntent);
     }
+<<<<<<< HEAD
 
     @Override
     public void onSearchClick() {
@@ -281,4 +347,6 @@ public class MainActivity extends AppCompatActivity implements DrawerListener, L
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.fragmentContainer, nextFragment).commit();
     }
+=======
+>>>>>>> refs/remotes/origin/Lets-Push
 }

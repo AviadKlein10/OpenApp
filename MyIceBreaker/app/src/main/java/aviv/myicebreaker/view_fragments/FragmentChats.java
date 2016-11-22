@@ -1,5 +1,6 @@
 package aviv.myicebreaker.view_fragments;
 
+<<<<<<< HEAD
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
@@ -9,6 +10,16 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+=======
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.content.Context;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+>>>>>>> refs/remotes/origin/Lets-Push
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,8 +36,11 @@ import aviv.myicebreaker.module.Adapters.SamplePagerAdapter;
 import aviv.myicebreaker.module.CustomObjects.NonSwipeableViewPager;
 import aviv.myicebreaker.module.Listeners.DrawerListener;
 
+<<<<<<< HEAD
 import static android.content.Context.MODE_PRIVATE;
 
+=======
+>>>>>>> refs/remotes/origin/Lets-Push
 
 /**
  * Created by Aviad on 28/08/2016.
@@ -50,6 +64,10 @@ public class FragmentChats extends Fragment implements View.OnClickListener {
         context = container.getContext();
         final View view = inflater.inflate(R.layout.fragment_chats, container, false);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/origin/Lets-Push
         fabNewMatch = (FloatingActionButton) view.findViewById(R.id.fabNewMatch);
         fragmentActiveChatsList = new FragmentActiveChatsList();
         fragmentMatchesList = new FragmentMatchesList();
@@ -70,8 +88,12 @@ public class FragmentChats extends Fragment implements View.OnClickListener {
         imgBtnMatches.setOnClickListener(this);
         imgBtnActiveChats.setOnClickListener(this);
         btnDrawer.setOnClickListener(this);
+<<<<<<< HEAD
         loadLastNotifications();
         deleteNotifications();
+=======
+
+>>>>>>> refs/remotes/origin/Lets-Push
         return view;
     }
 
@@ -187,6 +209,7 @@ Log.d("isadded2 ", backStateName+ " and " + fragmentManager.findFragmentById(R.i
         }
     }
 
+<<<<<<< HEAD
     private void loadLastNotifications(){
         SharedPreferences sharedPreferences = context.getSharedPreferences("refreshed_fb_token",MODE_PRIVATE);
         String restoredUserFBToken = sharedPreferences.getString("refreshed_fb_token", "");
@@ -204,4 +227,9 @@ Log.d("isadded2 ", backStateName+ " and " + fragmentManager.findFragmentById(R.i
         sharedPreferences.edit().remove("notification_key2").apply();
 
     }
+=======
+    private enum AnimationSide {
+        LEFT, RIGHT, NON;
+    }
+>>>>>>> refs/remotes/origin/Lets-Push
 }

@@ -27,22 +27,35 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 import aviv.myicebreaker.R;
+<<<<<<< HEAD
 import aviv.myicebreaker.module.Adapters.SwipeListViewAdapter;
 import aviv.myicebreaker.module.CustomObjects.UserInfoForChatCell;
 import aviv.myicebreaker.module.Listeners.ListenerActiveChatsList;
 import aviv.myicebreaker.network.SearchBtnListener;
+=======
+import aviv.myicebreaker.module.Listeners.ListenerActiveChatsList;
+import aviv.myicebreaker.module.Adapters.SwipeListViewAdapter;
+import aviv.myicebreaker.module.CustomObjects.UserInfoForChatCell;
+>>>>>>> refs/remotes/origin/Lets-Push
 
 /**
  * Created by Aviad on 01/09/2016.
  */
+<<<<<<< HEAD
 public class FragmentActiveChatsList extends Fragment implements View.OnClickListener{
+=======
+public class FragmentActiveChatsList extends Fragment {
+>>>>>>> refs/remotes/origin/Lets-Push
     private TextView txtActiveChats;
     private SwipeMenuListView listViewAcitveChats;
     private ListenerActiveChatsList listenerActiveChatsList;
     private FloatingActionButton fab;
+<<<<<<< HEAD
     private ArrayList<UserInfoForChatCell> userInfoForChatCellsArr;
     private SwipeListViewAdapter swipeListViewAdapter;
     private SearchBtnListener searchBtnListener;
+=======
+>>>>>>> refs/remotes/origin/Lets-Push
 
 
     @Nullable
@@ -55,12 +68,20 @@ public class FragmentActiveChatsList extends Fragment implements View.OnClickLis
         txtActiveChats = (TextView) view.findViewById(R.id.txtActiveChats);
         listViewAcitveChats = (SwipeMenuListView) view.findViewById(R.id.listViewActiveChats);
         fab = (FloatingActionButton) view.findViewById(R.id.fabNewMatch1);
+<<<<<<< HEAD
 fab.setOnClickListener(this);
         setFontType();
 
          userInfoForChatCellsArr = createArrayUserInfoForCell();
          swipeListViewAdapter = new SwipeListViewAdapter(getContext(), userInfoForChatCellsArr);
 
+=======
+
+        setFontType();
+
+        ArrayList<UserInfoForChatCell> userInfoForChatCellsArr = createArrayUserInfoForCell();
+        SwipeListViewAdapter swipeListViewAdapter = new SwipeListViewAdapter(getContext(), userInfoForChatCellsArr);
+>>>>>>> refs/remotes/origin/Lets-Push
         listViewAcitveChats.setAdapter(swipeListViewAdapter);
 
         createSwipeListview();
@@ -118,8 +139,11 @@ fab.setOnClickListener(this);
                         break;
                     case 3:
                         Log.d("item ", "delete");
+<<<<<<< HEAD
                         userInfoForChatCellsArr.remove(position);
                         swipeListViewAdapter.notifyDataSetChanged();
+=======
+>>>>>>> refs/remotes/origin/Lets-Push
                         break;
                 }
                 // false : close the menu; true : not close the menu
@@ -197,6 +221,7 @@ fab.setOnClickListener(this);
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+<<<<<<< HEAD
         if (context instanceof SearchBtnListener) {
             searchBtnListener = (SearchBtnListener) context;
 
@@ -204,6 +229,8 @@ fab.setOnClickListener(this);
         } else {
             throw new ClassCastException(context.toString() + " must implement OnRageComicSelected.");
         }
+=======
+>>>>>>> refs/remotes/origin/Lets-Push
         if (context instanceof ListenerActiveChatsList) {
             listenerActiveChatsList = (ListenerActiveChatsList) context;
 
@@ -215,7 +242,11 @@ fab.setOnClickListener(this);
 
 
     public void initFab() {
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> refs/remotes/origin/Lets-Push
         fab.hide(false);
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -227,6 +258,7 @@ fab.setOnClickListener(this);
         }, 300);
         fab.show(true);
     }
+<<<<<<< HEAD
 
     @Override
     public void onClick(View v) {
@@ -240,4 +272,6 @@ fab.setOnClickListener(this);
     }
 
 
+=======
+>>>>>>> refs/remotes/origin/Lets-Push
 }

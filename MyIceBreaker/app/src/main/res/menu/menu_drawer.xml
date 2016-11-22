@@ -11,7 +11,11 @@
             android:id="@+id/termsOfUse"
             android:title="@string/terms_of_use" />
         <item
+<<<<<<< HEAD
             android:id="@+id/contactUs"
+=======
+            android:id="@+id/contact"
+>>>>>>> refs/remotes/origin/Lets-Push
             android:title="@string/contact_us" />
         <item
             android:id="@+id/questionsAndAnswers"
