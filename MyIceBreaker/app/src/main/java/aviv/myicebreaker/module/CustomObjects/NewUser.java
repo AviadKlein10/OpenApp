@@ -10,16 +10,24 @@ public class NewUser {
     private String gender;
     private String[] imageUrl;
     private String email;
+<<<<<<< HEAD
     private String FCMToken;
 
     public NewUser(String name, String id, String birthday, String gender, String[] imageUrl, String email, String FCMToken) {
+=======
+
+    public NewUser(String name, String id, String birthday, String gender, String[] imageUrl, String email) {
+>>>>>>> refs/remotes/origin/Lets-Push
         this.name = name;
         this.id = id;
         this.birthday = birthday;
         this.gender = gender;
         this.imageUrl = imageUrl;
         this.email = email;
+<<<<<<< HEAD
         this.FCMToken = FCMToken;
+=======
+>>>>>>> refs/remotes/origin/Lets-Push
     }
 
     public NewUser(NewUser newUser) {
@@ -91,6 +99,7 @@ public class NewUser {
         this.email = email;
     }
 
+<<<<<<< HEAD
     public String getFCMToken() {
         return FCMToken;
     }
@@ -98,4 +107,6 @@ public class NewUser {
     public void setFCMToken(String FCMToken) {
         this.FCMToken = FCMToken;
     }
+=======
+>>>>>>> refs/remotes/origin/Lets-Push
 }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:background="@drawable/login_bg">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/textDate2"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgBubblePointer2"
+        android:src="@drawable/bubble_pointer_other_side_user"
+
+
+        android:visibility="invisible"
+        android:layout_alignBottom="@+id/textMsgContent2"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="-1.4dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Tex Medium"
+        android:id="@+id/textMsgContent2"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:background="@drawable/bubble_question_single"
+        android:gravity="center"
+        android:textColor="#ffffff"
+
+
+android:layout_centerHorizontal="true"
+         />
+
+</RelativeLayout>

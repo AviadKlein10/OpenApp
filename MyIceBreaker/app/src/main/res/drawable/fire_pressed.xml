@@ -2,8 +2,13 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:viewportWidth="24"
     android:viewportHeight="23"
+<<<<<<< HEAD
     android:width="28dp"
     android:height="27dp">
+=======
+    android:width="24dp"
+    android:height="23dp">
+>>>>>>> refs/remotes/origin/Lets-Push
     <group
         android:translateX="-313"
         android:translateY="-39">
